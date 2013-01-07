@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:aasg="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/HeatPumpFacility/0.6" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:gmlsf="http://www.opengis.net/gmlsf" targetNamespace="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/HeatPumpFacility/0.6" elementFormDefault="qualified" version="0.06">
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gmlsf" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd"/>
+	<xs:annotation>
+		<!-- This XSD document, including XML schema, indicates the content requested for data collected from heat pump facilities for the AASG geothermal data project.  Typically, information includes location information for the facility, information about the system type and contact information for the facility.  The FacilityURI for a particular site is the cross-referencing link (foreign key) used to associate the facility with additional information and metadata.  Each facility should have a unique FacilityURI. -->
+		<!--This XSD document was created on 2012-02-24 by Celia Coleman, AZGS.  This schema is based on the data available in the AASG Web Feature Services created for the heat pump facilities. -->
+		<xs:appinfo source="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd">
+			<gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
+			<gmlsf:GMLProfileSchema>
+http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gmlsf:GMLProfileSchema>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="HeatPumpFacility" type="aasg:HeatPumpFacilityType" substitutionGroup="gml:_Feature"/>
+	<xs:complexType name="HeatPumpFacilityType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="OBJECTID" type="xs:int" minOccurs="0"/>
+					<xs:element name="FacilityURI">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="FacilityName" type="xs:string"/>
+					<xs:element name="Label" type="xs:string"/>
+					<xs:element name="OtherID" type="xs:string" minOccurs="0"/>
+					<xs:element name="FacilityOwner" type="xs:string" minOccurs="0"/>
+					<xs:element name="Notes" type="xs:string" minOccurs="0"/>
+					<xs:element name="FacilityStatus" type="xs:string" minOccurs="0"/>
+					<xs:element name="StatusDate" type="xs:string" minOccurs="0"/>
+					<xs:element name="SystemType" type="xs:string"/>
+					<xs:element name="HeatExchangeSystem" type="xs:string"/>
+					<xs:element name="HVAC_specs" type="xs:string"/>
+					<xs:element name="DateInstalled" type="xs:string"/>
+					<xs:element name="HeatApplication" type="xs:string"/>
+					<xs:element name="County" type="xs:string"/>
+					<xs:element name="State" type="xs:string"/>
+					<xs:element name="PLSS_Meridians" type="xs:string" minOccurs="0"/>
+					<xs:element name="Township" type="xs:string" minOccurs="0"/>
+					<xs:element name="Range" type="xs:string" minOccurs="0"/>
+					<xs:element name="Section_" type="xs:double" minOccurs="0"/>
+					<xs:element name="SectionPart" type="xs:string" minOccurs="0"/>
+					<xs:element name="OtherLocationInformation" type="xs:string" minOccurs="0"/>
+					<xs:element name="UTM_E" type="xs:string" minOccurs="0"/>
+					<xs:element name="UTM_N" type="xs:string" minOccurs="0"/>
+					<xs:element name="UTMDatumZone" type="xs:string" minOccurs="0"/>
+					<xs:element name="LatDegree" type="xs:double"/>
+					<xs:element name="LongDegree" type="xs:double"/>
+					<xs:element name="SRS" type="xs:string"/>
+					<xs:element name="LocationUncertaintyStatement" type="xs:string"/>
+					<xs:element name="Driller" type="xs:string"/>
+					<xs:element name="NumberOfWells" type="xs:double"/>
+					<xs:element name="SpacingAvg_ft" type="xs:double"/>
+					<xs:element name="SpudDate" type="xs:string" minOccurs="0"/>
+					<xs:element name="EndedDrillingDate" type="xs:string" minOccurs="0"/>
+					<xs:element name="Permit" type="xs:string" minOccurs="0"/>
+					<xs:element name="ElevationGL" type="xs:double" minOccurs="0"/>
+					<xs:element name="DrillerTotalDepth_ft" type="xs:double" minOccurs="0"/>
+					<xs:element name="HoleDiameter_in" type="xs:double" minOccurs="0"/>
+					<xs:element name="CasingType" type="xs:string"/>
+					<xs:element name="CasingDiameter_in" type="xs:double"/>
+					<xs:element name="CasingDepth_ft" type="xs:double" minOccurs="0"/>
+					<xs:element name="DepthToWater_ft" type="xs:double"/>
+					<xs:element name="Depth_ft" type="xs:double" minOccurs="0"/>
+					<xs:element name="NumberOfTrenches" type="xs:double" minOccurs="0"/>
+					<xs:element name="FluidType" type="xs:string" minOccurs="0"/>
+					<xs:element name="PipeDiameter_in" type="xs:double" minOccurs="0"/>
+					<xs:element name="PipeMaterial" type="xs:string" minOccurs="0"/>
+					<xs:element name="PipeTotalLength_ft" type="xs:double" minOccurs="0"/>
+					<xs:element name="LithologyDescription" type="xs:string" minOccurs="0"/>
+					<xs:element name="GeologicFormation" type="xs:string" minOccurs="0"/>
+					<xs:element name="FacilityContact" type="xs:string"/>
+					<xs:element name="PostalAddress" type="xs:string" minOccurs="0"/>
+					<xs:element name="Zip" type="xs:string" minOccurs="0"/>
+					<xs:element name="Phone" type="xs:string" minOccurs="0"/>
+					<xs:element name="EMailAddress" type="xs:string" minOccurs="0"/>
+					<xs:element name="Source" type="xs:string"/>
+					<xs:element name="MetadataURI" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="UpdateTimeStamp" type="xs:string"/>
+					<xs:element name="Shape" type="gml:PointPropertyType"/>
+					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
