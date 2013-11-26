@@ -4,7 +4,7 @@
 	<xs:import namespace="http://www.opengis.net/gmlsf" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd"/>
 	<xs:annotation>
 		<!-- This XSD document, including XML schema, indicates the content requested for data collected from heat pump facilities for the AASG geothermal data project. Typically, information includes location information for the facility, information about the system type and contact information for the facility. The FacilityURI for a particular site is the cross-referencing link (foreign key) used to associate the facility with additional information and metadata. Each facility should have a unique FacilityURI. -->
-		<!--Annotated version 0.6.3. This XSD document was created on 2012-02-24 by Celia Coleman, AZGS.  This schema is based on the data available in the AASG Web Feature Services created for the heat pump facilities. Field Description annotations standardized 2013-08-22 by Esty Pape, AZGS.-->
+		<!--This schema is version 0.6.4, where date types were changed to "dateTime". Annotated version 0.6.3. This XSD document was created on 2012-02-24 by Celia Coleman, AZGS.  This schema is based on the data available in the AASG Web Feature Services created for the heat pump facilities. Field Description annotations standardized 2013-08-22 by Esty Pape, AZGS.-->
 		<xs:appinfo source="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd">
 			<gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
 			<gmlsf:GMLProfileSchema>
@@ -61,7 +61,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							<xs:documentation>Status of the feature at the time indicated in the StatusDate element. If unknown enter "unknown" in the field.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="StatusDate" type="xs:string" minOccurs="0">
+					<xs:element name="StatusDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>The status of the feature can change from time to time, thus it is useful to know the date on which a given status was reported. Day, month and year must be specified; Excel will display using ISO 8601 date and time (yyyy-mm-ddT:hh:mm) format. If only the year is known, enter month and day as 'Jan. 1', (or '1/1/', or '1-1-', or 'January 1,'). All dates will be converted to yyyy-mm-ddThh:mm.</xs:documentation>
 						</xs:annotation>
@@ -81,7 +81,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							<xs:documentation>Additional specifications of the HVAC system with respect to the physical installation.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="DateInstalled" type="xs:string">
+					<xs:element name="DateInstalled" type="xs:dateTime">
 						<xs:annotation>
 							<xs:documentation>Date facility installation was completed. Day, month and year must be specified; Excel will display using ISO 8601 date and time (yyyy-mm-ddT:hh:mm) format. If only the year is known, enter month and day as 'Jan. 1', (or '1/1/', or '1-1-', or 'January 1,'). All dates will be converted to yyyy-mm-ddThh:mm.</xs:documentation>
 						</xs:annotation>
@@ -181,12 +181,12 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							<xs:documentation>The average distance between boreholes in feet.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="SpudDate" type="xs:string" minOccurs="0">
+					<xs:element name="SpudDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Date for the record: date on which observation, measurement or test was made or specimen was collected. Day, month and year must be specified; Excel will display using ISO 8601 date and time (yyyy-mm-ddT:hh:mm) format. If only the year is known, enter month and day as 'Jan. 1', (or '1/1/', or '1-1-', or 'January 1,'). All dates will be converted to yyyy-mm-ddThh:mm.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="EndedDrillingDate" type="xs:string" minOccurs="0">
+					<xs:element name="EndedDrillingDate" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Date on which drilling of the well bore ended. Day, month and year must be specified; Excel will display using ISO 8601 date and time (yyyy-mm-ddT:hh:mm) format. If only the year is known, enter month and day as 'Jan. 1'. If year is unknown, enter 1900. All dates will be converted to yyyy-mm-ddThh:mm. This is intended as a searching aid.</xs:documentation>
 						</xs:annotation>
@@ -311,7 +311,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
-					<xs:element name="UpdateTimeStamp" type="xs:string">
+					<xs:element name="UpdateTimeStamp" type="xs:dateTime">
 						<xs:annotation>
 							<xs:documentation>Date of last time line of data was updated or corrected by the service provider.(Format: 2012-06-22T00:00).</xs:documentation>
 						</xs:annotation>
@@ -320,7 +320,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 						<xs:annotation>
 							<xs:documentation>Added by GIS for WFS service; this element appears in the xml output, but is generated during service deployment from the latitude and longitude, therefore it doesn't appear in the template.</xs:documentation>
 						</xs:annotation>
-						</xs:element>
+					</xs:element>
 					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
